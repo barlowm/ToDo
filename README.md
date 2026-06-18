@@ -1,23 +1,100 @@
 # ToDo
 
-I want to create a To Do application in Vue3.js which will run on a desktop browser as well as a mobile device
+This template is intended to get this project started with Vue 3 in Vite.
 
-To build a Vue 3 To Do app that runs on desktop browsers and mobile devices, use Vite for the build tool and Capacitor or a meta-framework like Quasar. This single-codebase approach allows you to d[...]
+## Recommended IDE Setup
+
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Recommended Browser Setup
+
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+bun install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+bun dev
+```
+
+### Compile and Minify for Production
+
+```sh
+bun run build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+bun test:unit
+```
+
+### Run End-to-End Tests with [Playwright](https://playwright.dev)
+
+```sh
+# Install browsers for the first run
+npx playwright install
+
+# When testing on CI, must build the project first
+bun run build
+
+# Runs the end-to-end tests
+bun test:e2e
+# Runs the tests only on Chromium
+bun test:e2e --project=chromium
+# Runs the tests of a specific file
+bun test:e2e tests/example.spec.ts
+# Runs the tests in debug mode
+bun test:e2e --debug
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+---
+
+The code base for the project itself is a To Do application in Vue3.js which will run as a Progressive Web App (PWA) which will run on both Desktop and Mobile Devices
 
 ## 1. Initialize the Vue 3 Project
-   Start by scaffolding your app with Vite. Open your terminal and run the setup command:
+The scaffolding of the project was initially done with Vite
    ```
    bash
-   npm create vue@latest
+   bun create vue@latest
    ```
-Follow the prompts to select **Vue 3** and **TypeScript** (optional, but highly recommended for scaling).
-Do not select server-side rendering (SSR) unless needed.
+The following features were included as part of the scaffolding process:
+
+* JSX Support
+* Router (SPA development)
+* Pinia (state management)
+* Vitest (unit testing)
+* End-to-End Testing
+* Linter (error prevention)
+* Prettier (code formatting)
+
+Playwright was selected as the End-to-End testing framework
+
+There was no experimental features included and all example code was eliminated and it was started as a blank project initially.
+
+
 
 ## 2. Choose Your Development Path
 Depending on your need for native device features (like push notifications or offline storage), choose one of these two setup methods:
 ### Option A: Progressive Web App (PWA) — Fastest for Desktop & Mobile Web
 If you want users to "install" the app via their browser on both platforms without publishing to app stores, use the **Vite PWA Plugin**.
-* Install the plugin: `npm i vite-plugin-pwa -D`
+* Install the plugin: `bun i vite-plugin-pwa -D`
 * Configure the `vite.config.ts` file to add your app's display properties, offline caching strategies, and manifest details.
 * _Benefit_: Works seamlessly in all modern desktop and mobile browsers, supporting an "Add to Home Screen" feature.
 ### Option B: Capacitor — Best for Native App Stores
@@ -248,5 +325,5 @@ const removeTodo = (id) => {
 
 ---
 If you want, I can help you:Choose between Tailwind CSS or Quasar by comparing them for your project needs.Set up a Pinia store for advanced To Do data management.Structure your UI components (e.g[...]
- 
+
    If you want, I can help you:Choose between Tailwind CSS or Quasar by comparing them for your project needs.Set up a Pinia store for advanced To Do data management.Structure your UI components ([...]
